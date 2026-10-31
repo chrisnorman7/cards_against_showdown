@@ -82,21 +82,24 @@ class GameScreenState extends ConsumerState<GameScreen> {
         ),
       ],
       title: 'Card ${playedCards.length} / ${widget.cards.length}',
-      body: Focus(
-        autofocus: true,
-        key: const ValueKey('card-area'),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(24, 32, 24, 96),
-            child: SizedBox(
-              width: double.infinity,
-              child: Semantics(
-                liveRegion: true,
-                child: Text(
-                  card,
-                  style: style,
-                  textAlign: TextAlign.start,
-                  softWrap: true,
+      body: Semantics(
+        label: card,
+        child: Focus(
+          autofocus: true,
+          key: const ValueKey('card-area'),
+          child: SafeArea(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(24, 32, 24, 96),
+              child: SizedBox(
+                width: double.infinity,
+                child: Semantics(
+                  liveRegion: true,
+                  child: Text(
+                    card,
+                    style: style,
+                    textAlign: TextAlign.start,
+                    softWrap: true,
+                  ),
                 ),
               ),
             ),
