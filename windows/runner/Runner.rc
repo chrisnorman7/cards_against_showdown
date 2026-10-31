@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "site.backstreets" "\0"
-            VALUE "FileDescription", "cards_against_showdown" "\0"
+            VALUE "CompanyName", "backstreets.site" "\0"
+            VALUE "FileDescription", "Cards Against Showdown" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "cards_against_showdown" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 site.backstreets. All rights reserved." "\0"
-            VALUE "OriginalFilename", "cards_against_showdown.exe" "\0"
-            VALUE "ProductName", "cards_against_showdown" "\0"
+            VALUE "InternalName", "Cards Against Showdown" "\0"
+            VALUE "LegalCopyright", "Copyright © 2026 Unlicense" "\0"
+            VALUE "OriginalFilename", "cas.exe" "\0"
+            VALUE "ProductName", "Cards Against Showdown" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,11 +1,11 @@
 {
-    "name": "cards_against_showdown",
-    "short_name": "cards_against_showdown",
+    "name": "Cards Against Showdown\"",
+    "short_name": "CAS",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Play cards and showdown at the same time. What could be better?",
+    "description": "A way of adding extra chaos to showdown.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

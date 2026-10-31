@@ -1,6 +1,6 @@
 name: cards_against_showdown
 description: "Play cards and showdown at the same time. What could be better?"
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -14,12 +14,44 @@ dependencies:
   flutter_audio_games: ^0.59.0
   flutter_riverpod: ^3.4.3
   material_ui: ^1.9.0
+  package_rename: ^1.10.1
 
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 
+package_rename_config:
+  android:
+    app_name: "Cards Against Showdown" # Display name
+    package_name: "site.backstreets.cas" # Package name
+    lang: "kotlin" # Optional: "kotlin" (default) or "java"
+
+  ios:
+    app_name: "Cards Against Showdown" # Display name
+    bundle_name: "cas" # Bundle name
+    package_name: "site.backstreets.cas" # Product Bundle Identifier
+
+  linux:
+    app_name: "Cards Against Showdown" # Window title
+    package_name: "site.backstreets.cas" # Application ID
+    exe_name: "cas" # Executable name (binary)
+
+  macos:
+    app_name: "Cards Against Showdown" # Product name
+    package_name: "site.backstreets.cas" # Product Bundle Identifier
+    copyright_notice: "Copyright © 2026 Unlicense" # Copyright notice
+
+  web:
+    app_name: Cards Against Showdown" # App title & PWA name
+    short_app_name: "CAS" # PWA short name (defaults to app_name)
+    description: "A way of adding extra chaos to showdown." # Web app description
+
+  windows:
+    app_name: "Cards Against Showdown" # Window title & Software name
+    organization: "backstreets.site" # Organization/Company name
+    copyright_notice: "Copyright © 2026 Unlicense" # Legal copyright
+    exe_name: "cas" # Executable name (binary)
 flutter:
   uses-material-design: true
   assets:
