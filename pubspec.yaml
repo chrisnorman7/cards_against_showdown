@@ -1,0 +1,26 @@
+name: cards_against_showdown
+description: "Play cards and showdown at the same time. What could be better?"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  backstreets_widgets: ^0.44.1
+  flutter:
+    sdk: flutter
+  flutter_audio_games: ^0.59.0
+  flutter_riverpod: ^3.4.3
+  material_ui: ^1.9.0
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
