@@ -46,17 +46,29 @@ class GameScreenState extends ConsumerState<GameScreen> {
   /// Build a widget.
   @override
   Widget build(BuildContext context) {
-    const style = TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
+    const style = TextStyle(
+      fontSize: 48,
+      fontWeight: FontWeight.bold,
+      height: 1.3,
+    );
     if (playedCards.isEmpty) {
       return SimpleScaffold(
         title: 'Start Game',
-        body: const Text('No card has been drawn yet.', style: style),
-        floatingActionButton: FloatingActionButton(
+        body: const SafeArea(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.fromLTRB(24, 32, 24, 96),
+            child: Text('No card has been drawn yet.', style: style),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton.extended(
           onPressed: drawCard,
           autofocus: true,
           tooltip: 'Draw your first card',
           key: const ValueKey('start-game'),
-          child: const Icon(Icons.card_membership),
+          label: const Text(
+            'Draw card',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
         ),
       );
     }
@@ -73,13 +85,32 @@ class GameScreenState extends ConsumerState<GameScreen> {
       body: Focus(
         autofocus: true,
         key: const ValueKey('card-area'),
-        child: Semantics(liveRegion: true, child: Text(card, style: style)),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(24, 32, 24, 96),
+            child: SizedBox(
+              width: double.infinity,
+              child: Semantics(
+                liveRegion: true,
+                child: Text(
+                  card,
+                  style: style,
+                  textAlign: TextAlign.start,
+                  softWrap: true,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: drawCard,
+        label: const Text(
+          'Draw another card',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
         tooltip: 'Draw another card',
         key: const ValueKey('draw-card'),
-        child: const Icon(Icons.card_travel),
       ),
     );
   }
