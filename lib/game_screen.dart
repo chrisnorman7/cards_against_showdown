@@ -46,10 +46,11 @@ class GameScreenState extends ConsumerState<GameScreen> {
   /// Build a widget.
   @override
   Widget build(BuildContext context) {
+    const style = TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
     if (playedCards.isEmpty) {
       return SimpleScaffold(
         title: 'Start Game',
-        body: const Text('No card has been drawn yet.'),
+        body: const Text('No card has been drawn yet.', style: style),
         floatingActionButton: FloatingActionButton(
           onPressed: drawCard,
           autofocus: true,
@@ -72,7 +73,7 @@ class GameScreenState extends ConsumerState<GameScreen> {
       body: Focus(
         autofocus: true,
         key: const ValueKey('card-area'),
-        child: Semantics(liveRegion: true, child: Text(card)),
+        child: Semantics(liveRegion: true, child: Text(card, style: style)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: drawCard,
